@@ -1,0 +1,77 @@
+
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Fundo com imagem */
+    body {
+      background: url("imagens/background.jpeg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Caixa central */
+    .card {
+      background: white;
+      width: 300px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    /* Texto */
+    .card p {
+      margin: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Botões */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .upload {
+      background: #8BE38B;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .reconhecer {
+      background: #f0f0f0;
+      color: #000;
+      border: 1px solid #ccc;
+    }
+
+    /* Instagram */
+    .instagram {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #000;
+    }
+
+    .instagram a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
