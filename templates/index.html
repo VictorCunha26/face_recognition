@@ -11,7 +11,7 @@
 <body>
   <div class="card">
     <!-- Logo -->
-    <img src="imagens/logo.jpeg" alt="Eureka Logo" class="logo">
+    <img src="static/logo.jpeg" alt="Eureka Logo" class="logo">
 
     <!-- Texto -->
     <p>Faça Upload da sua foto para registrar</p>
@@ -25,7 +25,7 @@
       <input type="file" id="upload" name="file" style="display: none;" onchange="this.form.submit()">
       <button type="button" class="btn upload" onclick="document.getElementById('upload').click()">Upload ⬆️</button>
     </form>
-    <button onclick="reconhecer()">Reconhecer</button>
+    <button class = "btn" onclick="reconhecer()">Reconhecer</button>
 
     <!-- Instagram -->
     <div class="instagram">
