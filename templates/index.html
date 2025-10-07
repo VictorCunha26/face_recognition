@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eureka!</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="static/style.css">
+  <script src="static/script.js"></script>
+  
 </head>
 <body>
   <div class="card">
@@ -16,15 +17,15 @@
     <p>Faça Upload da sua foto para registrar</p>
 
     <!-- Input escondido -->
-    <input type="file" id="fileInput" style="display: none;">
+    <input type="file" id="upload" style="display: none;">
 
     <!-- Botões -->
      <!-- Formulário -->
     <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" id="fileInput" name="file" style="display: none;" onchange="this.form.submit()">
-      <button type="button" class="btn upload" onclick="document.getElementById('fileInput').click()">Upload ⬆️</button>
+      <input type="file" id="upload" name="file" style="display: none;" onchange="this.form.submit()">
+      <button type="button" class="btn upload" onclick="document.getElementById('upload').click()">Upload ⬆️</button>
     </form>
-    <button class="btn reconhecer" onclick="reconhecer()">Reconhecer</button>
+    <button onclick="reconhecer()">Reconhecer</button>
 
     <!-- Instagram -->
     <div class="instagram">
@@ -32,5 +33,7 @@
       <a href="https://instagram.com/eureka.projeto" target="_blank">@eureka.projeto</a>
     </div>
   </div>
+
+  
 </body>
 </html>

@@ -9,7 +9,7 @@
 
     /* Fundo com imagem */
     body {
-      background: url("imagens/background.jpeg") no-repeat center center/cover;
+      background-color: rgb(42, 58, 147);
       height: 100vh;
       display: flex;
       justify-content: center;
