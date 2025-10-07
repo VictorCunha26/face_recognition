@@ -22,8 +22,8 @@
     <!-- Botões -->
      <!-- Formulário -->
     <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" id="upload" name="file" style="display: none;" onchange="this.form.submit()">
-      <button type="button" class="btn upload" onclick="document.getElementById('upload').click()">Upload ⬆️</button>
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Enviar</button>
     </form>
     <button class = "btn" onclick="reconhecer()">Reconhecer</button>
 
