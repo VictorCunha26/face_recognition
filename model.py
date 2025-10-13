@@ -1,9 +1,8 @@
 
+import datetime
 from pydantic import BaseModel
 
-class alunos(BaseModel):
+class Alunos(BaseModel):
     id_aluno : str
     nome_aluno : str
-    data_horario : 
-
-    
+    data_horario : datetime
