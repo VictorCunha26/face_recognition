@@ -54,7 +54,7 @@ def check_face(frame): # define uma função que será executada em uma thread (
     nome = None
     for ref_img, ref_name in zip(reference_images, reference_names): # Itera sobre todas as imagens de referência carregadas
         try:
-            result = DeepFace.verify(frame, ref_img.copy(), enforce_detection=False) # Compara a imagem do frame com a imagem de referência usando DeepFace.verify. enforce_detection=False evita erro caso o rosto não seja detectado (mas pode gerar falsos positivos).
+            result = DeepFace.verify(frame, ref_img.copy(), enforce_detection=True) # Compara a imagem do frame com a imagem de referência usando DeepFace.verify. enforce_detection=False evita erro caso o rosto não seja detectado (mas pode gerar falsos positivos).
             if result['verified']:
                 match_found = True
                 nome = ref_name
