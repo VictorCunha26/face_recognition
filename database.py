@@ -45,8 +45,8 @@ class Database:
     def executar(self, sql: str, params: Optional[Tuple[Any, ...]] = None) -> Optional[Any]:
         """Executa uma instrução (SELECT/INSERT/UPDATE/DELETE) no banco de dados."""
         if not self.connection or not self._cursor or not self.connection.is_connected():
-            print("Conexão ao banco de dados não estabelecida.")
-            return None
+            raise ConnectionError("Conexão ao banco de dados não estabelecida.")
+        
 
         try:
             self._cursor.execute(sql, params)
@@ -56,8 +56,7 @@ class Database:
                 self.connection.commit()
                 return self._cursor.rowcount  # Retorna o número de linhas afetadas
         except Error as e:
-            print(f"Erro ao executar SQL: {e}")
-            return None
+            raise RuntimeError(f"Erro ao executar SQL: {e}")
 
     def fetchone(self) -> Optional[dict]:
         """Retorna o próximo resultado da consulta."""
