@@ -2,7 +2,7 @@
 from flask import Flask, render_template, jsonify, request, redirect, url_for
 import subprocess
 from flask_cors import CORS
-
+from database import Database
 import os
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -40,5 +40,20 @@ def upload_file():
 
     file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
     return f"Arquivo {file.filename} salvo em faces/"
+
+
+@app.route('/alunos')
+def alunos():
+    db = Database()
+    db.conectar()
+    try:
+        dados = db.executar("SELECT nome_aluno, data_horario FROM alunos")
+    except Exception as e:
+        dados = []
+        print(f"Erro ao buscar alunos: {e}")
+    finally:
+        db.desconectar()
+
+    return render_template('alunos.html', alunos=dados)
 
 app.run(port=5000)

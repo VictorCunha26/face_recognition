@@ -16,16 +16,18 @@
     <!-- Texto -->
     <p>Faça Upload da sua foto para registrar</p>
 
-    <!-- Input escondido -->
-    <input type="file" id="upload" style="display: none;">
-
-    <!-- Botões -->
-     <!-- Formulário -->
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*">
-        <button type="submit">Enviar</button>
+    <!-- Formulário -->
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*">
+      <button type="submit">Enviar</button>
     </form>
-    <button class = "btn" onclick="reconhecer()">Reconhecer</button>
+
+    <p id="mensagem"></p>
+
+    <!-- Botão reconhecer -->
+    <button class="btn" onclick="reconhecer()">Reconhecer</button>
+
+  <button onclick="window.location.href='/alunos'">Ver Alunos</button>
 
     <!-- Instagram -->
     <div class="instagram">
@@ -34,6 +36,7 @@
     </div>
   </div>
 
-  
+
+
 </body>
 </html>

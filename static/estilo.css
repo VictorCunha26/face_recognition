@@ -1,0 +1,73 @@
+/* Corpo da página */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #2a3a93, #1a255e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+/* Título da tabela */
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Estilo da tabela */
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  
+}
+
+th {
+  background-color: #2a3a93;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #d9e1ff;
+  transition: 0.3s;
+}
+
+/* Botão voltar */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.botao-voltar {
+  text-align: center;
+  color: #333;
+}

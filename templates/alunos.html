@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Alunos</title>
+  <link rel="stylesheet" href="static/estilo.css">
+</head>
+<body>
+  <h2 style="text-align:center;">Tabela de Alunos</h2>
+  <table>
+    <thead>
+      <tr>
+        {% for coluna in alunos[0].keys() %}
+        <th>{{ coluna }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for aluno in alunos %}
+      <tr>
+        {% for valor in aluno.values() %}
+        <td>{{ valor }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="botao-voltar">
+    <button onclick="window.location.href='/'">Voltar</button>
+  </div>
+</body>
+</html>

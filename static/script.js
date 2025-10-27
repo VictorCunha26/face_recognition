@@ -18,4 +18,3 @@ document.getElementById("upload").addEventListener("change", function(){
         .then(data => alert(data.status || 'OK'))
         .catch(err => alert('Erro: ' + err));
     }
-

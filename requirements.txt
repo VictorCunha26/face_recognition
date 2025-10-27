@@ -42,6 +42,7 @@ MarkupSafe==3.0.3
 mdurl==0.1.2
 ml_dtypes==0.5.3
 mtcnn==1.0.0
+mysql-connector-python==9.4.0
 namex==0.1.0
 numpy==2.2.6
 opencv-python==4.12.0.88
