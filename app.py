@@ -48,6 +48,8 @@ def alunos():
     db.conectar()
     try:
         dados = db.executar("SELECT nome_aluno, data_horario FROM alunos")
+        if not dados:
+            dados = []
     except Exception as e:
         dados = []
         print(f"Erro ao buscar alunos: {e}")
