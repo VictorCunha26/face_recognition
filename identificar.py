@@ -39,7 +39,7 @@ def salvar_no_banco(nome):
         db = Database()
         db.conectar()
         if db.is_connected():
-            sql = "INSERT INTO alunos (nome_aluno, data_horario) VALUES (%s, %s)"
+            sql = "INSERT INTO alunos (nome_aluno, data_horario) VALUES (?, ?)"
             data_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             db.executar(sql, (nome, data_hora))
             print(f"[DB] {nome} salvo no banco de dados MySQl com sucesso")
