@@ -45,17 +45,29 @@ def upload_file():
 @app.route('/alunos')
 def alunos():
     db = Database()
+    dados_row = []  # Lista temporária para os objetos Row
+    dados_dict = [] # Lista final de dicionários
+    
     db.conectar()
     try:
-        dados = db.executar("SELECT nome_aluno, data_horario FROM alunos")
-        if not dados:
-            dados = []
+        # 1. Executa a busca (retorna objetos sqlite3.Row)
+        dados_row = db.executar("SELECT nome_aluno, data_horario FROM alunos")
+        
+        if dados_row:
+            # 2. CONVERSÃO: Converte cada Row para um dicionário Python padrão
+            for row in dados_row:
+                dados_dict.append(dict(row))
+        
+        # 'dados_dict' é a lista que será usada no template
+        
     except Exception as e:
-        dados = []
+        dados_dict = [] # Garante que, em caso de erro, a lista seja vazia
         print(f"Erro ao buscar alunos: {e}")
+        
     finally:
         db.desconectar()
 
-    return render_template('alunos.html', alunos=dados)
+    # Passa a lista de dicionários convertidos
+    return render_template('alunos.html', alunos=dados_dict)
 
 app.run(port=5000)
